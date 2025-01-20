@@ -55,14 +55,16 @@ npm install
 3. Set up environment variables:
 ```bash
 # Frontend (.env.local)
-NEXT_PUBLIC_SUPABASE_URL=[Your Supabase URL]
-NEXT_PUBLIC_SUPABASE_ANON_KEY=[Your Supabase Anon Key]
+--------------- TO BE ADDED ---------------
+NEXT_PUBLIC_SUPABASE_URL=[URL]
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[Anon Key]
 NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
 
 # Backend (.env)
-SUPABASE_URL=[Your Supabase URL]
-SUPABASE_SERVICE_KEY=[Your Supabase Service Key]
-YOUTUBE_API_KEY=[Your YouTube API Key]
+--------------- TO BE ADDED ---------------
+SUPABASE_URL=[URL]
+SUPABASE_SERVICE_KEY=[Service Key]
+YOUTUBE_API_KEY=[YouTube API Key]
 RTMP_SERVER_URL=rtmp://localhost/live
 ```
 

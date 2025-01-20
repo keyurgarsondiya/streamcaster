@@ -124,21 +124,22 @@ npm run test:watch
 
 Please maintain the following project structure when adding new features:
 
-```
-frontend/
-├── components/        # Reusable UI components
-├── hooks/            # Custom React hooks
-├── lib/              # Utility functions
-├── pages/            # Next.js pages
-└── tests/            # Test files
-
-backend/
-├── src/
-│   ├── controllers/  # Route controllers
-│   ├── services/     # Business logic
-│   ├── models/       # Data models
-│   └── utils/        # Helper functions
-└── tests/            # Test files
+```plaintext
+streamcaster/
+├── frontend/                # Next.js frontend application
+│   ├── app/                 # App router components
+│   ├── components/          # Reusable UI components
+│   ├── features/            # Feature-specific logic (e.g., Authentication, Streaming)
+│   ├── lib/                 # Utility functions and hooks
+│   └── styles/              # Global and component styles
+├── backend/                 # Node.js backend application
+│   ├── rtmp-server/         # RTMP server implementation
+│   ├── stream-processor/    # FFmpeg stream processing
+│   └── api/                 # REST API endpoints (Authentication, Streams, Overlays)
+├── public/                  # Static assets (e.g., images, overlays, favicon)
+├── prisma/                  # Prisma configuration and migrations
+├── docs/                    # Documentation and guides
+└── .env                     # Environment variable files
 ```
 
 ## Questions?

@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000" # Map host port 5001 to container port 5000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+      - RTMP_SERVER_URL=rtmp://rtmp-server/live
+    depends_on:
+      - rtmp-server
+
+  rtmp-server:
+    image: tiangolo/nginx-rtmp
+    ports:
+      - "1935:1935" # RTMP port
+      - "8080:80"   # Web UI for debugging

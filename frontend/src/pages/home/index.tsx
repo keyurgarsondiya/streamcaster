@@ -88,7 +88,7 @@ const HomePage: NextPage = () => {
         socketRef.current = null;
       }
     };
-  }, []); // Empty dependency array ensures the effect runs only once
+  }, []);
 
   const handleStreamNow = () => {
     if (!streamRef.current || !socketRef.current?.connected) {

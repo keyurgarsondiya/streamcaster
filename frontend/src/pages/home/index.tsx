@@ -32,7 +32,7 @@ const HomePage: NextPage = () => {
 
     streamRef.current = stream;
     // MediaStream
-    const audioTrack = stream.getAudioTracks()[0]; // Out of multiple devices get audio from first one
+    // const audioTrack = stream.getAudioTracks()[0]; // Out of multiple devices get audio from first one
     const videoTrack = stream.getVideoTracks()[0];
     // setLocalAudioTrack(audioTrack);
     // setlocalVideoTrack(videoTrack);
@@ -41,7 +41,7 @@ const HomePage: NextPage = () => {
     }
 
     videoRef.current.srcObject = new MediaStream([videoTrack]);
-    videoRef.current.play();
+    await videoRef.current.play();
   };
 
   useEffect(() => {
@@ -54,7 +54,9 @@ const HomePage: NextPage = () => {
     // })();
 
     if (videoRef && videoRef.current) {
-      getCam();
+      getCam().then((r) => {
+        console.log('getCam res: ', r);
+      });
     }
 
     // Initialize Socket.IO
@@ -139,7 +141,7 @@ const HomePage: NextPage = () => {
       if (videoRef.current) videoRef.current.srcObject = screenStream;
       setScreenSharing(true);
     } else {
-      getCam();
+      await getCam();
       setScreenSharing(false);
     }
   };

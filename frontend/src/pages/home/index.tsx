@@ -15,10 +15,10 @@ const HomePage: NextPage = () => {
   const [streamTitle, setStreamTitle] = useState('');
   const [description, setDescription] = useState('');
 
-  const [localAudioTrack, setLocalAudioTrack] =
-    useState<MediaStreamTrack | null>(null);
-  const [localVideoTrack, setlocalVideoTrack] =
-    useState<MediaStreamTrack | null>(null);
+  // const [localAudioTrack, setLocalAudioTrack] =
+  //   useState<MediaStreamTrack | null>(null);
+  // const [localVideoTrack, setlocalVideoTrack] =
+  //   useState<MediaStreamTrack | null>(null);
 
   const streamRef = useRef<MediaStream | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -34,8 +34,8 @@ const HomePage: NextPage = () => {
     // MediaStream
     const audioTrack = stream.getAudioTracks()[0]; // Out of multiple devices get audio from first one
     const videoTrack = stream.getVideoTracks()[0];
-    setLocalAudioTrack(audioTrack);
-    setlocalVideoTrack(videoTrack);
+    // setLocalAudioTrack(audioTrack);
+    // setlocalVideoTrack(videoTrack);
     if (!videoRef.current) {
       return;
     }
